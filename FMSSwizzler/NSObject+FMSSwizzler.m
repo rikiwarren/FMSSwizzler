@@ -371,7 +371,7 @@
     static NSUInteger count = 0;
     count ++;
     
-    NSString *className = [NSString stringWithFormat:@"RKW_%@_%ld", startingClass, count];
+    NSString *className = [NSString stringWithFormat:@"RKW_%@_%@", startingClass, @(count)];
     
     Class cls = objc_allocateClassPair(startingClass,
                                        [className cStringUsingEncoding:NSUTF8StringEncoding],

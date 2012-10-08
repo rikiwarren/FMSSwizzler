@@ -145,11 +145,11 @@
     // Old properties continue to work
     STAssertEqualObjects(self.p1.firstName, @"Bob", @"firstName should continue to work");
     STAssertEqualObjects(self.p1.lastName, @"Davis", @"Last name should continue to work");
-    STAssertEquals(self.p1.age, 25ul, @"Age should continue to work");
+    STAssertEquals(self.p1.age, (NSUInteger)25, @"Age should continue to work");
     
     STAssertEqualObjects(self.p2.firstName, @"Sara", @"firstName should continue to work");
     STAssertEqualObjects(self.p2.lastName, @"Jones", @"Last name should continue to work");
-    STAssertEquals(self.p2.age, 35ul, @"Age should continue to work");
+    STAssertEquals(self.p2.age, (NSUInteger)35, @"Age should continue to work");
     
     
 
@@ -198,8 +198,8 @@
     STAssertFalse(copyDeallocated, @"We shouldn't have deallocated a copy of o3 property");
     
     STAssertEquals(self.p1.pseudoBool, YES, @"pseduoBool should return the value we set");
-    STAssertEquals(self.p1.pseudoInteger, -156l, @"pseudoInteger should return the value we set");
-    STAssertEquals(self.p1.pseudoUInteger, 345ul, @"pseudoUInteger should return the value we set");
+    STAssertEquals(self.p1.pseudoInteger, (NSInteger)-156, @"pseudoInteger should return the value we set");
+    STAssertEquals(self.p1.pseudoUInteger, (NSUInteger)345, @"pseudoUInteger should return the value we set");
     STAssertEquals(self.p1.pseudoFloat, -3.45f, @"pseudoFloat should return the value we set");
     STAssertEquals(self.p1.pseudoDouble, 23.532, @"pseudoDouble should return the value we set");
     
@@ -209,8 +209,8 @@
     STAssertEqualObjects(self.p2.pseudoCopy, nil, @"Should return nil by default");
     STAssertEqualObjects(self.p2.pseudoAssign, nil, @"Should return nil by default");
     STAssertEquals(self.p2.pseudoBool, NO, @"should return NO by default");
-    STAssertEquals(self.p2.pseudoInteger, 0l, @"Should return 0 by default");
-    STAssertEquals(self.p2.pseudoUInteger, 0ul, @"should return 0 by default");
+    STAssertEquals(self.p2.pseudoInteger, (NSInteger)0, @"Should return 0 by default");
+    STAssertEquals(self.p2.pseudoUInteger, (NSUInteger)0, @"should return 0 by default");
     STAssertEquals(self.p2.pseudoFloat, 0.0f, @"should return 0.0 by default");
     STAssertEquals(self.p2.pseudoDouble, 0.0, @"should return 0.0 by default");
     
