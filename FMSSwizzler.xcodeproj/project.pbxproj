@@ -8,14 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		349A21E71622152D001D254C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A21E61622152D001D254C /* Foundation.framework */; };
-		349A21EC1622152D001D254C /* FMSSwizzler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 349A21EB1622152D001D254C /* FMSSwizzler.h */; };
-		349A21EE1622152D001D254C /* FMSSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A21ED1622152D001D254C /* FMSSwizzler.m */; };
 		349A21F61622152D001D254C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A21F51622152D001D254C /* SenTestingKit.framework */; };
 		349A21F81622152D001D254C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A21F71622152D001D254C /* UIKit.framework */; };
 		349A21F91622152D001D254C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A21E61622152D001D254C /* Foundation.framework */; };
-		349A21FC1622152D001D254C /* libFMSSwizzler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A21E31622152D001D254C /* libFMSSwizzler.a */; };
+		349A21FC1622152D001D254C /* libFMSSwizzler_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A21E31622152D001D254C /* libFMSSwizzler_ios.a */; };
 		349A22021622152D001D254C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 349A22001622152D001D254C /* InfoPlist.strings */; };
 		349A22051622152D001D254C /* FMSSwizzlerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A22041622152D001D254C /* FMSSwizzlerTests.m */; };
+		349A221016221546001D254C /* NSObject+FMSSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A220F16221546001D254C /* NSObject+FMSSwizzler.m */; };
+		349A22251622168D001D254C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A22241622168D001D254C /* Cocoa.framework */; };
+		349A222F1622168D001D254C /* FMSwizzler_osx.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A222E1622168D001D254C /* FMSwizzler_osx.m */; };
+		349A22361622168D001D254C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A21F51622152D001D254C /* SenTestingKit.framework */; };
+		349A22371622168D001D254C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A22241622168D001D254C /* Cocoa.framework */; };
+		349A223A1622168D001D254C /* libFMSwizzler_osx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A22231622168D001D254C /* libFMSwizzler_osx.a */; };
+		349A22401622168D001D254C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 349A223E1622168D001D254C /* InfoPlist.strings */; };
+		349A22431622168D001D254C /* PseudoPropertyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A22421622168D001D254C /* PseudoPropertyTests.m */; };
+		349A224A162216B3001D254C /* NSObject+FMSSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A220F16221546001D254C /* NSObject+FMSSwizzler.m */; };
+		349A224D16221BD9001D254C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A224C16221BD9001D254C /* Person.m */; };
+		349A224E16221BD9001D254C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A224C16221BD9001D254C /* Person.m */; };
+		349A224F1622243C001D254C /* NSObject+FMSSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A220F16221546001D254C /* NSObject+FMSSwizzler.m */; };
+		349A2252162236BC001D254C /* MonitorableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A2251162236BC001D254C /* MonitorableObject.m */; };
+		349A2253162236BC001D254C /* MonitorableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A2251162236BC001D254C /* MonitorableObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +38,13 @@
 			remoteGlobalIDString = 349A21E21622152D001D254C;
 			remoteInfo = FMSSwizzler;
 		};
+		349A22381622168D001D254C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 349A21DA1622152D001D254C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 349A22221622168D001D254C;
+			remoteInfo = FMSwizzler_osx;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,18 +54,15 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				349A21EC1622152D001D254C /* FMSSwizzler.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		349A21E31622152D001D254C /* libFMSSwizzler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFMSSwizzler.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		349A21E31622152D001D254C /* libFMSSwizzler_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFMSSwizzler_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		349A21E61622152D001D254C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		349A21EA1622152D001D254C /* FMSSwizzler-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMSSwizzler-Prefix.pch"; sourceTree = "<group>"; };
-		349A21EB1622152D001D254C /* FMSSwizzler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMSSwizzler.h; sourceTree = "<group>"; };
-		349A21ED1622152D001D254C /* FMSSwizzler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMSSwizzler.m; sourceTree = "<group>"; };
 		349A21F41622152D001D254C /* FMSSwizzlerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FMSSwizzlerTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		349A21F51622152D001D254C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		349A21F71622152D001D254C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -54,6 +70,25 @@
 		349A22011622152D001D254C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		349A22031622152D001D254C /* FMSSwizzlerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMSSwizzlerTests.h; sourceTree = "<group>"; };
 		349A22041622152D001D254C /* FMSSwizzlerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMSSwizzlerTests.m; sourceTree = "<group>"; };
+		349A220E16221546001D254C /* NSObject+FMSSwizzler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FMSSwizzler.h"; sourceTree = "<group>"; };
+		349A220F16221546001D254C /* NSObject+FMSSwizzler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FMSSwizzler.m"; sourceTree = "<group>"; };
+		349A22231622168D001D254C /* libFMSwizzler_osx.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFMSwizzler_osx.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		349A22241622168D001D254C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		349A22271622168D001D254C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		349A22281622168D001D254C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		349A22291622168D001D254C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		349A222C1622168D001D254C /* FMSwizzler_osx-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMSwizzler_osx-Prefix.pch"; sourceTree = "<group>"; };
+		349A222D1622168D001D254C /* FMSwizzler_osx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMSwizzler_osx.h; sourceTree = "<group>"; };
+		349A222E1622168D001D254C /* FMSwizzler_osx.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMSwizzler_osx.m; sourceTree = "<group>"; };
+		349A22351622168D001D254C /* FMSwizzler_osxTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FMSwizzler_osxTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		349A223D1622168D001D254C /* FMSwizzler_osxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FMSwizzler_osxTests-Info.plist"; sourceTree = "<group>"; };
+		349A223F1622168D001D254C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		349A22411622168D001D254C /* PseudoPropertyTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PseudoPropertyTests.h; sourceTree = "<group>"; };
+		349A22421622168D001D254C /* PseudoPropertyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PseudoPropertyTests.m; sourceTree = "<group>"; };
+		349A224B16221BD9001D254C /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		349A224C16221BD9001D254C /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		349A2250162236BC001D254C /* MonitorableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonitorableObject.h; sourceTree = "<group>"; };
+		349A2251162236BC001D254C /* MonitorableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonitorableObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +107,25 @@
 				349A21F61622152D001D254C /* SenTestingKit.framework in Frameworks */,
 				349A21F81622152D001D254C /* UIKit.framework in Frameworks */,
 				349A21F91622152D001D254C /* Foundation.framework in Frameworks */,
-				349A21FC1622152D001D254C /* libFMSSwizzler.a in Frameworks */,
+				349A21FC1622152D001D254C /* libFMSSwizzler_ios.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349A22201622168D001D254C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349A22251622168D001D254C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349A22311622168D001D254C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349A22361622168D001D254C /* SenTestingKit.framework in Frameworks */,
+				349A22371622168D001D254C /* Cocoa.framework in Frameworks */,
+				349A223A1622168D001D254C /* libFMSwizzler_osx.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +137,8 @@
 			children = (
 				349A21E81622152D001D254C /* FMSSwizzler */,
 				349A21FD1622152D001D254C /* FMSSwizzlerTests */,
+				349A222A1622168D001D254C /* FMSwizzler_osx */,
+				349A223B1622168D001D254C /* FMSwizzler_osxTests */,
 				349A21E51622152D001D254C /* Frameworks */,
 				349A21E41622152D001D254C /* Products */,
 			);
@@ -92,8 +147,10 @@
 		349A21E41622152D001D254C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				349A21E31622152D001D254C /* libFMSSwizzler.a */,
+				349A21E31622152D001D254C /* libFMSSwizzler_ios.a */,
 				349A21F41622152D001D254C /* FMSSwizzlerTests.octest */,
+				349A22231622168D001D254C /* libFMSwizzler_osx.a */,
+				349A22351622168D001D254C /* FMSwizzler_osxTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,6 +161,8 @@
 				349A21E61622152D001D254C /* Foundation.framework */,
 				349A21F51622152D001D254C /* SenTestingKit.framework */,
 				349A21F71622152D001D254C /* UIKit.framework */,
+				349A22241622168D001D254C /* Cocoa.framework */,
+				349A22261622168D001D254C /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,8 +170,8 @@
 		349A21E81622152D001D254C /* FMSSwizzler */ = {
 			isa = PBXGroup;
 			children = (
-				349A21EB1622152D001D254C /* FMSSwizzler.h */,
-				349A21ED1622152D001D254C /* FMSSwizzler.m */,
+				349A220E16221546001D254C /* NSObject+FMSSwizzler.h */,
+				349A220F16221546001D254C /* NSObject+FMSSwizzler.m */,
 				349A21E91622152D001D254C /* Supporting Files */,
 			);
 			path = FMSSwizzler;
@@ -145,12 +204,73 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		349A22261622168D001D254C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				349A22271622168D001D254C /* AppKit.framework */,
+				349A22281622168D001D254C /* CoreData.framework */,
+				349A22291622168D001D254C /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		349A222A1622168D001D254C /* FMSwizzler_osx */ = {
+			isa = PBXGroup;
+			children = (
+				349A222D1622168D001D254C /* FMSwizzler_osx.h */,
+				349A222E1622168D001D254C /* FMSwizzler_osx.m */,
+				349A222B1622168D001D254C /* Supporting Files */,
+			);
+			path = FMSwizzler_osx;
+			sourceTree = "<group>";
+		};
+		349A222B1622168D001D254C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				349A222C1622168D001D254C /* FMSwizzler_osx-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		349A223B1622168D001D254C /* FMSwizzler_osxTests */ = {
+			isa = PBXGroup;
+			children = (
+				349A22411622168D001D254C /* PseudoPropertyTests.h */,
+				349A22421622168D001D254C /* PseudoPropertyTests.m */,
+				349A223C1622168D001D254C /* Supporting Files */,
+				349A224B16221BD9001D254C /* Person.h */,
+				349A224C16221BD9001D254C /* Person.m */,
+				349A2250162236BC001D254C /* MonitorableObject.h */,
+				349A2251162236BC001D254C /* MonitorableObject.m */,
+			);
+			path = FMSwizzler_osxTests;
+			sourceTree = "<group>";
+		};
+		349A223C1622168D001D254C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				349A223D1622168D001D254C /* FMSwizzler_osxTests-Info.plist */,
+				349A223E1622168D001D254C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		349A22211622168D001D254C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		349A21E21622152D001D254C /* FMSSwizzler */ = {
+		349A21E21622152D001D254C /* FMSSwizzler_ios */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 349A22081622152D001D254C /* Build configuration list for PBXNativeTarget "FMSSwizzler" */;
+			buildConfigurationList = 349A22081622152D001D254C /* Build configuration list for PBXNativeTarget "FMSSwizzler_ios" */;
 			buildPhases = (
 				349A21DF1622152D001D254C /* Sources */,
 				349A21E01622152D001D254C /* Frameworks */,
@@ -160,9 +280,9 @@
 			);
 			dependencies = (
 			);
-			name = FMSSwizzler;
+			name = FMSSwizzler_ios;
 			productName = FMSSwizzler;
-			productReference = 349A21E31622152D001D254C /* libFMSSwizzler.a */;
+			productReference = 349A21E31622152D001D254C /* libFMSSwizzler_ios.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		349A21F31622152D001D254C /* FMSSwizzlerTests */ = {
@@ -182,6 +302,42 @@
 			name = FMSSwizzlerTests;
 			productName = FMSSwizzlerTests;
 			productReference = 349A21F41622152D001D254C /* FMSSwizzlerTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		349A22221622168D001D254C /* FMSwizzler_osx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 349A22441622168D001D254C /* Build configuration list for PBXNativeTarget "FMSwizzler_osx" */;
+			buildPhases = (
+				349A221F1622168D001D254C /* Sources */,
+				349A22201622168D001D254C /* Frameworks */,
+				349A22211622168D001D254C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FMSwizzler_osx;
+			productName = FMSwizzler_osx;
+			productReference = 349A22231622168D001D254C /* libFMSwizzler_osx.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		349A22341622168D001D254C /* FMSwizzler_osxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 349A22471622168D001D254C /* Build configuration list for PBXNativeTarget "FMSwizzler_osxTests" */;
+			buildPhases = (
+				349A22301622168D001D254C /* Sources */,
+				349A22311622168D001D254C /* Frameworks */,
+				349A22321622168D001D254C /* Resources */,
+				349A22331622168D001D254C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				349A22391622168D001D254C /* PBXTargetDependency */,
+			);
+			name = FMSwizzler_osxTests;
+			productName = FMSwizzler_osxTests;
+			productReference = 349A22351622168D001D254C /* FMSwizzler_osxTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -205,8 +361,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				349A21E21622152D001D254C /* FMSSwizzler */,
+				349A21E21622152D001D254C /* FMSSwizzler_ios */,
 				349A21F31622152D001D254C /* FMSSwizzlerTests */,
+				349A22221622168D001D254C /* FMSwizzler_osx */,
+				349A22341622168D001D254C /* FMSwizzler_osxTests */,
 			);
 		};
 /* End PBXProject section */
@@ -217,6 +375,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				349A22021622152D001D254C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349A22321622168D001D254C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349A22401622168D001D254C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +402,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		349A22331622168D001D254C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -243,7 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				349A21EE1622152D001D254C /* FMSSwizzler.m in Sources */,
+				349A221016221546001D254C /* NSObject+FMSSwizzler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +431,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				349A22051622152D001D254C /* FMSSwizzlerTests.m in Sources */,
+				349A224D16221BD9001D254C /* Person.m in Sources */,
+				349A2252162236BC001D254C /* MonitorableObject.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349A221F1622168D001D254C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349A222F1622168D001D254C /* FMSwizzler_osx.m in Sources */,
+				349A224A162216B3001D254C /* NSObject+FMSSwizzler.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		349A22301622168D001D254C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				349A22431622168D001D254C /* PseudoPropertyTests.m in Sources */,
+				349A224E16221BD9001D254C /* Person.m in Sources */,
+				349A224F1622243C001D254C /* NSObject+FMSSwizzler.m in Sources */,
+				349A2253162236BC001D254C /* MonitorableObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,8 +461,13 @@
 /* Begin PBXTargetDependency section */
 		349A21FB1622152D001D254C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 349A21E21622152D001D254C /* FMSSwizzler */;
+			target = 349A21E21622152D001D254C /* FMSSwizzler_ios */;
 			targetProxy = 349A21FA1622152D001D254C /* PBXContainerItemProxy */;
+		};
+		349A22391622168D001D254C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 349A22221622168D001D254C /* FMSwizzler_osx */;
+			targetProxy = 349A22381622168D001D254C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -270,6 +476,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				349A22011622152D001D254C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		349A223E1622168D001D254C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				349A223F1622168D001D254C /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -377,6 +591,82 @@
 			};
 			name = Release;
 		};
+		349A22451622168D001D254C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FMSwizzler_osx/FMSwizzler_osx-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		349A22461622168D001D254C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FMSwizzler_osx/FMSwizzler_osx-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		349A22481622168D001D254C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FMSwizzler_osx/FMSwizzler_osx-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "FMSwizzler_osxTests/FMSwizzler_osxTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		349A22491622168D001D254C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FMSwizzler_osx/FMSwizzler_osx-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "FMSwizzler_osxTests/FMSwizzler_osxTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -389,7 +679,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		349A22081622152D001D254C /* Build configuration list for PBXNativeTarget "FMSSwizzler" */ = {
+		349A22081622152D001D254C /* Build configuration list for PBXNativeTarget "FMSSwizzler_ios" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				349A22091622152D001D254C /* Debug */,
@@ -402,6 +692,22 @@
 			buildConfigurations = (
 				349A220C1622152D001D254C /* Debug */,
 				349A220D1622152D001D254C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		349A22441622168D001D254C /* Build configuration list for PBXNativeTarget "FMSwizzler_osx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349A22451622168D001D254C /* Debug */,
+				349A22461622168D001D254C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		349A22471622168D001D254C /* Build configuration list for PBXNativeTarget "FMSwizzler_osxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				349A22481622168D001D254C /* Debug */,
+				349A22491622168D001D254C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
