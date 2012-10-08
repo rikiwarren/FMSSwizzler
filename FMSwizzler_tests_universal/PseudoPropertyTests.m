@@ -339,6 +339,8 @@
     
     STAssertNoThrow(adder(@"aNameCanHave123numbers_and_underscores"), @"This should not throw an exception");
     
+//    STFail(@"Boo");
+
 }
 
 

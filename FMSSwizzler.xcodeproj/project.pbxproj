@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3472869F16229669009EFA98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 349A223E1622168D001D254C /* InfoPlist.strings */; };
+		347286A21623594B009EFA98 /* AliasInstanceMethodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 347286A11623594B009EFA98 /* AliasInstanceMethodTests.m */; };
+		347286A31623594B009EFA98 /* AliasInstanceMethodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 347286A11623594B009EFA98 /* AliasInstanceMethodTests.m */; };
 		349A21E71622152D001D254C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A21E61622152D001D254C /* Foundation.framework */; };
 		349A21F61622152D001D254C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A21F51622152D001D254C /* SenTestingKit.framework */; };
 		349A21F81622152D001D254C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A21F71622152D001D254C /* UIKit.framework */; };
@@ -61,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		3472869E16229635009EFA98 /* FMSSwizzler_iosTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "FMSSwizzler_iosTests-Info.plist"; path = "FMSwizzler_tests_universal/FMSSwizzler_iosTests-Info.plist"; sourceTree = SOURCE_ROOT; };
+		347286A01623594B009EFA98 /* AliasInstanceMethodTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AliasInstanceMethodTests.h; sourceTree = SOURCE_ROOT; };
+		347286A11623594B009EFA98 /* AliasInstanceMethodTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AliasInstanceMethodTests.m; sourceTree = SOURCE_ROOT; };
 		349A21E31622152D001D254C /* libFMSSwizzler_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libFMSSwizzler_ios.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		349A21E61622152D001D254C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		349A21EA1622152D001D254C /* FMSSwizzler-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FMSSwizzler-Prefix.pch"; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 			children = (
 				349A22411622168D001D254C /* PseudoPropertyTests.h */,
 				349A22421622168D001D254C /* PseudoPropertyTests.m */,
+				347286A01623594B009EFA98 /* AliasInstanceMethodTests.h */,
+				347286A11623594B009EFA98 /* AliasInstanceMethodTests.m */,
 				349A223C1622168D001D254C /* Supporting Files */,
 				349A225F1622917C001D254C /* TestFiles */,
 			);
@@ -399,6 +405,7 @@
 				349A225C16228F52001D254C /* NSObject+FMSSwizzler.m in Sources */,
 				349A2260162293D1001D254C /* Person.m in Sources */,
 				349A2262162293D5001D254C /* MonitorableObject.m in Sources */,
+				347286A21623594B009EFA98 /* AliasInstanceMethodTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +425,7 @@
 				349A224F1622243C001D254C /* NSObject+FMSSwizzler.m in Sources */,
 				349A2261162293D2001D254C /* Person.m in Sources */,
 				349A2263162293D6001D254C /* MonitorableObject.m in Sources */,
+				347286A31623594B009EFA98 /* AliasInstanceMethodTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

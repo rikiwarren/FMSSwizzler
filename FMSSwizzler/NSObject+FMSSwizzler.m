@@ -304,6 +304,71 @@
     return adder;
 }
 
+#pragma mark - Instance Method Swizzlers
+
++ (void)FMS_aliasInstanceMethod:(SEL)originalSelector newSelector:(SEL)newSelector {
+    
+    if (class_getInstanceMethod(self, newSelector) != NULL) {
+        [NSException
+         raise:NSInvalidArgumentException
+         format:@"The selector %@ is already being used.",
+         NSStringFromSelector(newSelector)];
+    }
+    
+    NSUInteger originalArgCount = [[NSStringFromSelector(originalSelector) componentsSeparatedByString:@":"] count];
+    NSUInteger newArgCount = [[NSStringFromSelector(newSelector) componentsSeparatedByString:@":"] count];
+    
+    if ( originalArgCount != newArgCount) {
+        
+        [NSException
+         raise:NSInvalidArgumentException
+         format:@"The selectors must have the same number of arguments, had %d and %d",
+         (int)originalArgCount, (int)newArgCount];
+        
+    }
+    
+    Method originalMethod = class_getInstanceMethod(self, originalSelector);
+    
+    if (originalMethod == NULL) {
+        [NSException raise:NSInvalidArgumentException
+                    format:@"The original method does not exist"];
+    }
+    
+    IMP implementation = method_getImplementation(originalMethod);
+    const char *typeEncoding = method_getTypeEncoding(originalMethod);
+    
+    if (!class_addMethod(self, newSelector, implementation, typeEncoding)) {
+        
+        [NSException
+         raise:NSGenericException
+         format:@"An unknown exception occured while adding the alias method"];
+    }
+}
+
+// TODO: what happens if the method is defined in the super class?
+// TODO: do I need to copy it over first?
++ (void)FMS_replaceInstanceMethod:(SEL)methodSelector withImplementationBlock:(id)block {
+    
+    // Make sure we have an implementation in the current class (not super class)
+    Method originalMethod = class_getInstanceMethod(self, methodSelector);
+    
+    if (originalMethod == NULL) {
+        [NSException raise:NSInvalidArgumentException
+                    format:@"The original method does not exist"];
+    }
+    
+    const char *typeEncoding = method_getTypeEncoding(originalMethod);
+    IMP newImp = imp_implementationWithBlock(block);
+    
+    class_replaceMethod(self, methodSelector, newImp, typeEncoding);
+}
+
++ (void)FMS_overrideInstanceMethod:(SEL)selector oldSelector:(SEL)oldSelector implementationBlock:(id)block {
+    
+    [self FMS_aliasInstanceMethod:selector newSelector:oldSelector];
+    [self FMS_replaceInstanceMethod:selector withImplementationBlock:block];
+}
+
 
 #pragma mark - Class Method Swizzlers
 
@@ -313,13 +378,25 @@
 // TODO: what happens if the method is defined in the super class?
 // TODO: do I need to copy it over first?
 
-+ (BOOL)FMS_aliasClassMethod:(SEL)originalSelector newSelector:(SEL)newSelector {
++ (void)FMS_aliasClassMethod:(SEL)originalSelector newSelector:(SEL)newSelector {
     
     if (class_getClassMethod(self, newSelector) != NULL) {
         [NSException
          raise:NSInvalidArgumentException
          format:@"The selector %@ is already being used.",
          NSStringFromSelector(newSelector)];
+    }
+    
+    NSUInteger originalArgCount = [[NSStringFromSelector(originalSelector) componentsSeparatedByString:@":"] count];
+    NSUInteger newArgCount = [[NSStringFromSelector(newSelector) componentsSeparatedByString:@":"] count];
+    
+    if ( originalArgCount != newArgCount) {
+        
+        [NSException
+         raise:NSInvalidArgumentException
+         format:@"The selectors must have the same number of arguments, had %d and %d",
+         (int)originalArgCount, (int)newArgCount];
+        
     }
     
     Method originalMethod = class_getClassMethod(self, originalSelector);
@@ -332,13 +409,18 @@
     IMP implementation = method_getImplementation(originalMethod);
     const char *typeEncoding = method_getTypeEncoding(originalMethod);
     
-    return class_addMethod(object_getClass(self), newSelector, implementation, typeEncoding);
+    if (!class_addMethod(object_getClass(self), newSelector, implementation, typeEncoding)) {
+        
+        [NSException
+         raise:NSGenericException
+         format:@"An unknown exception occured while adding the alias method"];
+    }
 }
 
 // TODO: what happens if the method is defined in the super class?
 // TODO: do I need to copy it over first?
 
-+ (BOOL)FMS_replaceClassMethod:(SEL)methodSelector withImplementationBlock:(id)block {
++ (void)FMS_replaceClassMethod:(SEL)methodSelector withImplementationBlock:(id)block {
     
     // Make sure we have a method implemented.
     Method originalMethod = class_getClassMethod(object_getClass(self), methodSelector);
@@ -350,118 +432,16 @@
     
     const char *typeEncoding = method_getTypeEncoding(originalMethod);
     IMP newImp = imp_implementationWithBlock(block);
-    
-    IMP result = class_replaceMethod(object_getClass(self), methodSelector, newImp, typeEncoding);
-    
-    return (result != NULL);
+    class_replaceMethod(object_getClass(self), methodSelector, newImp, typeEncoding);
 }
 
 // TODO: what happens if the method is defined in the super class?
 // TODO: do I need to copy it over first?
 
-+ (BOOL)FMS_overrideClassMethod:(SEL)selector oldSelector:(SEL)oldSelector implementationBlock:(id)block {
++ (void)FMS_overrideClassMethod:(SEL)selector oldSelector:(SEL)oldSelector implementationBlock:(id)block {
     
-    BOOL success = [self FMS_aliasClassMethod:selector newSelector:oldSelector];
-    if (!success) return NO;
-    
-    return [self FMS_replaceClassMethod:selector withImplementationBlock:block];
-}
-
-#pragma mark - Dynamic Subclassing
-
-// TODO: make the methods that modify the class methods.
-// TODO: dynamic subclassing should return a config block to let us call class methods. Why?
-// TODO: make sure we can use this for class clusters--but not core foundation classes.
-// TODO: We get errors when we get a tagged pointer for the date--test with NSNumber (can we force them to be tagged?).
-
-- (void)FMS_dynamiclySubclass {
-    
-    Class startingClass = [self class];
-    
-    if ([[startingClass description] hasPrefix:@"__"]) {
-
-        [NSException
-         raise:NSInvalidArgumentException
-         format:@"An error occurred while trying to dynamicallys subclass %@. "
-         @"Cannot safely dynamically subclass Apple's private classes--they may be "
-         @"toll-free bridged or tagged pointers.",
-         startingClass];
-    }
-    
-    static NSUInteger count = 0;
-    count ++;
-    
-    NSString *className = [NSString stringWithFormat:@"RKW_%@_%@", startingClass, @(count)];
-    
-    Class cls = objc_allocateClassPair(startingClass,
-                                       [className cStringUsingEncoding:NSUTF8StringEncoding],
-                                       0);
-    
-    
-    objc_registerClassPair(cls);
-    object_setClass(self, cls);
-    
-    [self FMS_replaceInstanceMethod:@selector(classForCoder) withImplementationBlock:^(id self) {
-        return startingClass;
-    }];
-}
-
-#pragma mark - Instance Method Swizzlers
-
-// TODO: can we use these on class clusters?
-// TODO: can we use these on core foundation classes?
-
-// TODO: what happens if the method is defined in the super class?
-// TODO: do I need to copy it over first?
-
-- (BOOL)FMS_aliasInstanceMethod:(SEL)originalSelector newSelector:(SEL)newSelector {
-    
-    if (class_getInstanceMethod([self class], newSelector) != NULL) {
-        [NSException
-         raise:NSInvalidArgumentException
-         format:@"The selector %@ is already being used.",
-         NSStringFromSelector(newSelector)];
-    }
-    
-    Method originalMethod = class_getInstanceMethod([self class], originalSelector);
-    
-    if (originalMethod == NULL) {
-        [NSException raise:NSInvalidArgumentException
-                    format:@"The original method does not exist"];
-    }
-    
-    IMP implementation = method_getImplementation(originalMethod);
-    const char *typeEncoding = method_getTypeEncoding(originalMethod);
-    
-    return class_addMethod([self class], newSelector, implementation, typeEncoding);
-}
-
-// TODO: what happens if the method is defined in the super class?
-// TODO: do I need to copy it over first?
-- (BOOL)FMS_replaceInstanceMethod:(SEL)methodSelector withImplementationBlock:(id)block {
-    
-    // Make sure we have an implementation in the current class (not super class)
-    Method originalMethod = class_getInstanceMethod([self class], methodSelector);
-    
-    if (originalMethod == NULL) {
-        [NSException raise:NSInvalidArgumentException
-                    format:@"The original method does not exist"];
-    }
-    
-    const char *typeEncoding = method_getTypeEncoding(originalMethod);
-    IMP newImp = imp_implementationWithBlock(block);
-    
-    IMP result = class_replaceMethod([self class], methodSelector, newImp, typeEncoding);
-    
-    return (result != NULL);
-}
-
-- (BOOL)FMS_overrideInstanceMethod:(SEL)selector oldSelector:(SEL)oldSelector implementationBlock:(id)block {
-    
-    BOOL success = [self FMS_aliasInstanceMethod:selector newSelector:oldSelector];
-    if (!success) return NO;
-    
-    return [self FMS_replaceInstanceMethod:selector withImplementationBlock:block];
+    [self FMS_aliasClassMethod:selector newSelector:oldSelector];
+    [self FMS_replaceClassMethod:selector withImplementationBlock:block];
 }
 
 
@@ -537,6 +517,45 @@
     class_addMethod(class, setter, setterImp,
                     [setterTypeString cStringUsingEncoding:NSUTF8StringEncoding]);
     
+}
+
+#pragma mark - Dynamic Subclassing
+
+// TODO: make the methods that modify the class methods.
+// TODO: dynamic subclassing should return a config block to let us call class methods. Why?
+// TODO: make sure we can use this for class clusters--but not core foundation classes.
+// TODO: We get errors when we get a tagged pointer for the date--test with NSNumber (can we force them to be tagged?).
+
+- (void)FMS_dynamiclySubclass {
+    
+    Class startingClass = [self class];
+    
+    if ([[startingClass description] hasPrefix:@"__"]) {
+        
+        [NSException
+         raise:NSInvalidArgumentException
+         format:@"An error occurred while trying to dynamicallys subclass %@. "
+         @"Cannot safely dynamically subclass Apple's private classes--they may be "
+         @"toll-free bridged or tagged pointers.",
+         startingClass];
+    }
+    
+    static NSUInteger count = 0;
+    count ++;
+    
+    NSString *className = [NSString stringWithFormat:@"RKW_%@_%@", startingClass, @(count)];
+    
+    Class cls = objc_allocateClassPair(startingClass,
+                                       [className cStringUsingEncoding:NSUTF8StringEncoding],
+                                       0);
+    
+    
+    objc_registerClassPair(cls);
+    object_setClass(self, cls);
+    
+    [cls FMS_replaceInstanceMethod:@selector(classForCoder) withImplementationBlock:^(id self) {
+        return startingClass;
+    }];
 }
 
 @end
