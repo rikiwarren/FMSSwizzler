@@ -1,13 +1,13 @@
 //
-//  AliasTests.h
+//  OverrideMethodTests.h
 //  FMSSwizzler
 //
-//  Created by Rich Warren on 10/8/12.
+//  Created by Rich Warren on 10/9/12.
 //  Copyright (c) 2012 Rich Warren. All rights reserved.
 //
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface AliasInstanceMethodTests : SenTestCase
+@interface OverrideMethodTests : SenTestCase
 
 @end

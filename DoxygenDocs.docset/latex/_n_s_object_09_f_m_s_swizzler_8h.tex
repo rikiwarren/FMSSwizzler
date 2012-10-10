@@ -1,0 +1,73 @@
+\hypertarget{_n_s_object_09_f_m_s_swizzler_8h}{\section{F\-M\-S\-Swizzler/\-N\-S\-Object+\-F\-M\-S\-Swizzler.h File Reference}
+\label{_n_s_object_09_f_m_s_swizzler_8h}\index{F\-M\-S\-Swizzler/\-N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{F\-M\-S\-Swizzler/\-N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}}
+}
+{\ttfamily \#import $<$Foundation/\-Foundation.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+category \hyperlink{category_n_s_object_07_f_m_s___swizzler_08}{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}
+\begin{DoxyCompactList}\small\item\em F\-M\-S\-Swizzler's public methods. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \hyperlink{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72}{pseudo\-Property\-Type} \hyperlink{_n_s_object_09_f_m_s_swizzler_8h_a105a30990436a0245ace5499526862cf}{F\-M\-S\-Pseudo\-Property\-Type}
+\item 
+typedef void($^\wedge$ \hyperlink{_n_s_object_09_f_m_s_swizzler_8h_ae568c6e4323fed2a329c8e59a7f15a95}{F\-M\-S\-Pseudo\-Property\-Adder} )(N\-S\-String $\ast$property\-Name)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72}{pseudo\-Property\-Type} \{ \\*
+\hyperlink{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72ac44d6f7cb6cde99e0ee049239da9f6d0}{F\-M\-S\-Object\-Retain}, 
+\hyperlink{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72abc101b45febe76788e857b10b8bfd916}{F\-M\-S\-Object\-Copy}, 
+\hyperlink{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72aee547e27acbccf66d1fb1698bf1a3ab1}{F\-M\-S\-Object\-Assign\-Unsafe}, 
+\hyperlink{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72aa1d669fdd9747c84697d34a7443ee9b1}{F\-M\-S\-Bool}, 
+\\*
+\hyperlink{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72a7f957ab84f94a28cb764e69e746109be}{F\-M\-S\-Integer}, 
+\hyperlink{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72a6adbec559231f0ea14b4cefb38de203b}{F\-M\-S\-Unsigned\-Integer}, 
+\hyperlink{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72ae2b11cb6c36310b70b7a59a49ee06faa}{F\-M\-S\-Float}, 
+\hyperlink{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72ad101a152c15c1240003778bc221b44b9}{F\-M\-S\-Double}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The public interface for F\-M\-S\-Swizzler.
+
+Note\-: I've tried to test and identify most of the obvious gotchas. However, by it's nature class and method swizzling is inherently unsafe. There may be additional edge cases that will cause errors. Please use these methods with care, and test your code thoroughly. 
+
+\subsection{Typedef Documentation}
+\hypertarget{_n_s_object_09_f_m_s_swizzler_8h_ae568c6e4323fed2a329c8e59a7f15a95}{\index{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}!F\-M\-S\-Pseudo\-Property\-Adder@{F\-M\-S\-Pseudo\-Property\-Adder}}
+\index{F\-M\-S\-Pseudo\-Property\-Adder@{F\-M\-S\-Pseudo\-Property\-Adder}!NSObject+FMSSwizzler.h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}}
+\subsubsection[{F\-M\-S\-Pseudo\-Property\-Adder}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($^\wedge$ F\-M\-S\-Pseudo\-Property\-Adder)(N\-S\-String $\ast$property\-Name)}}\label{_n_s_object_09_f_m_s_swizzler_8h_ae568c6e4323fed2a329c8e59a7f15a95}
+A block that can add a property of the given property name to its class. You should generate an F\-M\-S\-Pseudo\-Property\-Adder block for each class, and for each property type. \hypertarget{_n_s_object_09_f_m_s_swizzler_8h_a105a30990436a0245ace5499526862cf}{\index{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}!F\-M\-S\-Pseudo\-Property\-Type@{F\-M\-S\-Pseudo\-Property\-Type}}
+\index{F\-M\-S\-Pseudo\-Property\-Type@{F\-M\-S\-Pseudo\-Property\-Type}!NSObject+FMSSwizzler.h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}}
+\subsubsection[{F\-M\-S\-Pseudo\-Property\-Type}]{\setlength{\rightskip}{0pt plus 5cm}typedef enum {\bf pseudo\-Property\-Type} {\bf F\-M\-S\-Pseudo\-Property\-Type}}}\label{_n_s_object_09_f_m_s_swizzler_8h_a105a30990436a0245ace5499526862cf}
+Used to identify the property type for dynamically added pseudo-\/properties 
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72}{\index{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}!pseudo\-Property\-Type@{pseudo\-Property\-Type}}
+\index{pseudo\-Property\-Type@{pseudo\-Property\-Type}!NSObject+FMSSwizzler.h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}}
+\subsubsection[{pseudo\-Property\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf pseudo\-Property\-Type}}}\label{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72}
+Used to set the property type for dynamicly added pseudo-\/properties. All properties are nonatomic. \begin{Desc}
+\item[Enumerator\-: ]\par
+\begin{description}
+\index{F\-M\-S\-Object\-Retain@{F\-M\-S\-Object\-Retain}!N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}}\index{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}!F\-M\-S\-Object\-Retain@{F\-M\-S\-Object\-Retain}}\item[{\em 
+\hypertarget{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72ac44d6f7cb6cde99e0ee049239da9f6d0}{F\-M\-S\-Object\-Retain}\label{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72ac44d6f7cb6cde99e0ee049239da9f6d0}
+}]Used for objects that should be retained. \index{F\-M\-S\-Object\-Copy@{F\-M\-S\-Object\-Copy}!N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}}\index{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}!F\-M\-S\-Object\-Copy@{F\-M\-S\-Object\-Copy}}\item[{\em 
+\hypertarget{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72abc101b45febe76788e857b10b8bfd916}{F\-M\-S\-Object\-Copy}\label{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72abc101b45febe76788e857b10b8bfd916}
+}]Used for objects that should be copied. \index{F\-M\-S\-Object\-Assign\-Unsafe@{F\-M\-S\-Object\-Assign\-Unsafe}!N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}}\index{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}!F\-M\-S\-Object\-Assign\-Unsafe@{F\-M\-S\-Object\-Assign\-Unsafe}}\item[{\em 
+\hypertarget{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72aee547e27acbccf66d1fb1698bf1a3ab1}{F\-M\-S\-Object\-Assign\-Unsafe}\label{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72aee547e27acbccf66d1fb1698bf1a3ab1}
+}]Used for objects that should be assigned unsafely (N\-O\-T a zeroing weak reference). \index{F\-M\-S\-Bool@{F\-M\-S\-Bool}!N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}}\index{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}!F\-M\-S\-Bool@{F\-M\-S\-Bool}}\item[{\em 
+\hypertarget{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72aa1d669fdd9747c84697d34a7443ee9b1}{F\-M\-S\-Bool}\label{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72aa1d669fdd9747c84697d34a7443ee9b1}
+}]Used for scalar {\ttfamily B\-O\-O\-L} values \index{F\-M\-S\-Integer@{F\-M\-S\-Integer}!N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}}\index{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}!F\-M\-S\-Integer@{F\-M\-S\-Integer}}\item[{\em 
+\hypertarget{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72a7f957ab84f94a28cb764e69e746109be}{F\-M\-S\-Integer}\label{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72a7f957ab84f94a28cb764e69e746109be}
+}]Used for scalar {\ttfamily N\-S\-Integer} values \index{F\-M\-S\-Unsigned\-Integer@{F\-M\-S\-Unsigned\-Integer}!N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}}\index{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}!F\-M\-S\-Unsigned\-Integer@{F\-M\-S\-Unsigned\-Integer}}\item[{\em 
+\hypertarget{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72a6adbec559231f0ea14b4cefb38de203b}{F\-M\-S\-Unsigned\-Integer}\label{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72a6adbec559231f0ea14b4cefb38de203b}
+}]Used for scalar {\ttfamily N\-S\-U\-Integer} values \index{F\-M\-S\-Float@{F\-M\-S\-Float}!N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}}\index{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}!F\-M\-S\-Float@{F\-M\-S\-Float}}\item[{\em 
+\hypertarget{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72ae2b11cb6c36310b70b7a59a49ee06faa}{F\-M\-S\-Float}\label{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72ae2b11cb6c36310b70b7a59a49ee06faa}
+}]Used for scalar {\ttfamily float} values \index{F\-M\-S\-Double@{F\-M\-S\-Double}!N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}}\index{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}!F\-M\-S\-Double@{F\-M\-S\-Double}}\item[{\em 
+\hypertarget{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72ad101a152c15c1240003778bc221b44b9}{F\-M\-S\-Double}\label{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf72ad101a152c15c1240003778bc221b44b9}
+}]Used for scalar {\ttfamily double} values \end{description}
+\end{Desc}
+

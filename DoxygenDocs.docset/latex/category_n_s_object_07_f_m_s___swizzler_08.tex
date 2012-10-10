@@ -1,0 +1,246 @@
+\hypertarget{category_n_s_object_07_f_m_s___swizzler_08}{\section{N\-S\-Object(F\-M\-S\-\_\-\-Swizzler) Category Reference}
+\label{category_n_s_object_07_f_m_s___swizzler_08}\index{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}}
+}
+
+
+F\-M\-S\-Swizzler's public methods.  
+
+
+
+
+{\ttfamily \#import $<$N\-S\-Object+\-F\-M\-S\-Swizzler.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+(void) -\/ \hyperlink{category_n_s_object_07_f_m_s___swizzler_08_ad66725b3dc5baf8c59142e2647cf4f37}{F\-M\-S\-\_\-dynamicly\-Subclass}
+\begin{DoxyCompactList}\small\item\em Make the instance a subclass of its current class. This lets you override methods on the new subclass without affecting any other objects in your project. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+(void) + \hyperlink{category_n_s_object_07_f_m_s___swizzler_08_a3b21e8a4c6a7668de51f77ba308cc4fe}{F\-M\-S\-\_\-alias\-Instance\-Method\-:new\-Selector\-:}
+\begin{DoxyCompactList}\small\item\em adds a new instance method using the same implementation as the original selector \end{DoxyCompactList}\item 
+(void) + \hyperlink{category_n_s_object_07_f_m_s___swizzler_08_ac4c9e082d74e163f82d2cd429f735a89}{F\-M\-S\-\_\-replace\-Instance\-Method\-:with\-Implementation\-Block\-:}
+\begin{DoxyCompactList}\small\item\em Replaces the specified method with the given block. \end{DoxyCompactList}\item 
+(void) + \hyperlink{category_n_s_object_07_f_m_s___swizzler_08_a7acd4f5c709742f78301d791530fc698}{F\-M\-S\-\_\-override\-Instance\-Method\-:old\-Selector\-:implementation\-Block\-:}
+\begin{DoxyCompactList}\small\item\em Allows you to replace the implementation of an existing method, while still providing access to the original implementation. \end{DoxyCompactList}\item 
+(void) + \hyperlink{category_n_s_object_07_f_m_s___swizzler_08_a8abadede831b1fabdf944cf802c19011}{F\-M\-S\-\_\-alias\-Class\-Method\-:new\-Selector\-:}
+\begin{DoxyCompactList}\small\item\em adds a new class method using the same implementation as the original selector \end{DoxyCompactList}\item 
+(void) + \hyperlink{category_n_s_object_07_f_m_s___swizzler_08_ada43393ead6d6976de66fd0df1211e3d}{F\-M\-S\-\_\-replace\-Class\-Method\-:with\-Implementation\-Block\-:}
+\begin{DoxyCompactList}\small\item\em Replaces the specified class method with the given block. \end{DoxyCompactList}\item 
+(void) + \hyperlink{category_n_s_object_07_f_m_s___swizzler_08_af89360df900835e962975d2c7b32f06f}{F\-M\-S\-\_\-override\-Class\-Method\-:old\-Selector\-:implementation\-Block\-:}
+\begin{DoxyCompactList}\small\item\em Allows you to replace the implementation of an existing class method, while still providing access to the original implementation. \end{DoxyCompactList}\item 
+(\hyperlink{_n_s_object_09_f_m_s_swizzler_8h_ae568c6e4323fed2a329c8e59a7f15a95}{F\-M\-S\-Pseudo\-Property\-Adder}) + \hyperlink{category_n_s_object_07_f_m_s___swizzler_08_ab9e309f9b20d03131be614a852347eb8}{F\-M\-S\-\_\-generate\-Pseudo\-Property\-Adder\-For\-Type\-:}
+\begin{DoxyCompactList}\small\item\em Generates a {\ttfamily F\-M\-S\-Pseudo\-Property\-Adder} block for the specified class and property type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+F\-M\-S\-Swizzler's public methods. 
+
+Public methods added to the N\-S\-Object (and it's decendents) to simplify method and class swizzling, as well as providing support for dynamically adding pseudo properties at runtime. 
+
+\subsection{Member Function Documentation}
+\hypertarget{category_n_s_object_07_f_m_s___swizzler_08_a8abadede831b1fabdf944cf802c19011}{\index{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}!F\-M\-S\-\_\-alias\-Class\-Method\-:new\-Selector\-:@{F\-M\-S\-\_\-alias\-Class\-Method\-:new\-Selector\-:}}
+\index{F\-M\-S\-\_\-alias\-Class\-Method\-:new\-Selector\-:@{F\-M\-S\-\_\-alias\-Class\-Method\-:new\-Selector\-:}!NSObject(FMS_Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}}
+\subsubsection[{F\-M\-S\-\_\-alias\-Class\-Method\-:new\-Selector\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) F\-M\-S\-\_\-alias\-Class\-Method\-: 
+\begin{DoxyParamCaption}
+\item[{(S\-E\-L)}]{original\-Selector}
+\item[{newSelector:(S\-E\-L)}]{new\-Selector}
+\end{DoxyParamCaption}
+}}\label{category_n_s_object_07_f_m_s___swizzler_08_a8abadede831b1fabdf944cf802c19011}
+
+
+adds a new class method using the same implementation as the original selector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original\-Selector} & This is the original selector whose implementation we wish to alias. This must be a class method that is currently defined either by the current class or by one of its ancestors.\\
+\hline
+{\em new\-Selector} & This is the selector for the new class method we will create. This method must not yet exist either in the current class or in any of its ancestors. Additionally, this must have the same number of arguments as {\ttfamily original\-Selector}.\\
+\hline
+\end{DoxyParams}
+This method creates a new class method using the {\ttfamily new\-Selector} and the implementation from the {\ttfamily original\-Selector}. We then have two methods that both use the same implementation. This is particularly useful if you wish to replace an existing method, but still want to be able to access it in your code.
+
+Note\-: There may be a few odd edge cases where methods check the \-\_\-cmd hidden before determining their behavior. In these cases, the aliased methods will use the new selector for their \-\_\-cmd value. So, they may no longer function properly. This should be rare, however. \hypertarget{category_n_s_object_07_f_m_s___swizzler_08_a3b21e8a4c6a7668de51f77ba308cc4fe}{\index{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}!F\-M\-S\-\_\-alias\-Instance\-Method\-:new\-Selector\-:@{F\-M\-S\-\_\-alias\-Instance\-Method\-:new\-Selector\-:}}
+\index{F\-M\-S\-\_\-alias\-Instance\-Method\-:new\-Selector\-:@{F\-M\-S\-\_\-alias\-Instance\-Method\-:new\-Selector\-:}!NSObject(FMS_Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}}
+\subsubsection[{F\-M\-S\-\_\-alias\-Instance\-Method\-:new\-Selector\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) F\-M\-S\-\_\-alias\-Instance\-Method\-: 
+\begin{DoxyParamCaption}
+\item[{(S\-E\-L)}]{original\-Selector}
+\item[{newSelector:(S\-E\-L)}]{new\-Selector}
+\end{DoxyParamCaption}
+}}\label{category_n_s_object_07_f_m_s___swizzler_08_a3b21e8a4c6a7668de51f77ba308cc4fe}
+
+
+adds a new instance method using the same implementation as the original selector 
+
+
+\begin{DoxyParams}{Parameters}
+{\em original\-Selector} & This is the original selector whose implementation we wish to alias. This must be an instance method that is currently defined either by the current class or by one of its ancestors.\\
+\hline
+{\em new\-Selector} & This is the selector for the new method we will create. This instance method must not yet exist either in the current class or in any of its ancestors. Additionally, this must have the same number of arguments as {\ttfamily original\-Selector}.\\
+\hline
+\end{DoxyParams}
+This method creates a new method using the {\ttfamily new\-Selector} and the implementation from the {\ttfamily original\-Selector}. We then have two methods that both use the same implementation. This is particularly useful if you wish to replace an existing method, but still want access to it.
+
+Note\-: You must take care when aliasing methods from class clusters. Classes like N\-S\-String, N\-S\-Array or N\-S\-Date declare a public, abstract class--but then provide private subclasses when instantiated. If you alias the abstract class (e.\-g. {\ttfamily \mbox{[}N\-S\-String F\-M\-S\-\_\-alias\-Instance\-Method\-:...}) your new method will point to the version of the method defined in the abstract class, not the version provided in the concrete subclass. To correctly alias the subclass, you must call {\ttfamily F\-M\-S\-\_\-alias\-Instance\-Method} on the subclass itself (e.\-g. `\mbox{[}\mbox{[}my\-String class\mbox{]} F\-M\-S\-\_\-alias\-Instance\-Method...). To make things even more difficult, different instances from the same class cluster may have different concrete subclasses. Bottom line, it's probably best to avoid aliasing methods on class clusters. Alternatively, dynamically subclass the instance before creating the alias to limit the change to just that instance.
+
+Note\-: Aliasing can also interfere with K\-V\-O (though, in potentially useful ways). If you are observing a keypath that corresponds to an accessor method, and you alias that accessor method, then calling the original method will still generate K\-V\-O notifications--but calling the alias will not. This, potentially, lets you sidestep around K\-V\-O notification when done deliberately, but can also cause odd bugs when you are not paying attention.
+
+Note\-: There may be a few odd edge cases where methods check the \-\_\-cmd hidden before determining their behavior. In these cases, the aliased methods will use the new selector for their \-\_\-cmd value. So, they may no longer function properly. This should be rare, however. \hypertarget{category_n_s_object_07_f_m_s___swizzler_08_ad66725b3dc5baf8c59142e2647cf4f37}{\index{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}!F\-M\-S\-\_\-dynamicly\-Subclass@{F\-M\-S\-\_\-dynamicly\-Subclass}}
+\index{F\-M\-S\-\_\-dynamicly\-Subclass@{F\-M\-S\-\_\-dynamicly\-Subclass}!NSObject(FMS_Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}}
+\subsubsection[{F\-M\-S\-\_\-dynamicly\-Subclass}]{\setlength{\rightskip}{0pt plus 5cm}-\/ (void) F\-M\-S\-\_\-dynamicly\-Subclass 
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+}}\label{category_n_s_object_07_f_m_s___swizzler_08_ad66725b3dc5baf8c59142e2647cf4f37}
+
+
+Make the instance a subclass of its current class. This lets you override methods on the new subclass without affecting any other objects in your project. 
+
+Calling this method dynamically creates a subclass of the object's current class, then changes the object's class to the newly created subclass. This lets us sandbox any changes we make to the class. It is most often paired with calls to {\ttfamily F\-M\-S\-\_\-override\-Instance\-Method\-:old\-Selector\-:implementation\-Block\-:}, letting us override the instances method without modifying any other instances of the class.
+
+Dynamic subclassing avoids many of the problems associated with class clusters.
+
+Note\-: Any further F\-M\-S\-Swizzling methods must be called on the new class. For example, if I dynamically subclass my {\ttfamily self.\-person} instance, I can then override its methods by calling {\ttfamily \mbox{[}\mbox{[}self.\-person class\mbox{]} F\-M\-S\-\_\-override\-Instance\-Method...}.
+
+Note\-: Care must be taken when mixing dynamic subclassing and K\-V\-O. K\-V\-O uses a version of dynamic subclassing to provide its notifications. Importantly, K\-V\-O notifications will only work if the K\-V\-O subclass is the last one. Therefore, calling {\ttfamily F\-M\-S\-\_\-dynamicly\-Subclass} before calling {\ttfamily add\-Observer\-:for\-Key\-Path\-:options\-:context\-:} works fine. Calling {\ttfamily add\-Observer\-:for\-Key\-Path\-:options\-:context\-:} and then calling {\ttfamily F\-M\-S\-\_\-dynamicly\-Subclass} will prevent the notifications from being sent.
+
+Note\-: Dynamic subclassing cannot be used with tagged pointers. Some N\-S\-Number and N\-S\-Date (and possibly other) objects use pointer tagging to improve efficiency. {\ttfamily F\-M\-S\-\_\-dynamicly\-Subclass} will check the object's class before trying to dynamically subclass the class. If it finds a tagged pointer (any pointer with a 1 in the lowest bit), it throws an exception. \hypertarget{category_n_s_object_07_f_m_s___swizzler_08_ab9e309f9b20d03131be614a852347eb8}{\index{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}!F\-M\-S\-\_\-generate\-Pseudo\-Property\-Adder\-For\-Type\-:@{F\-M\-S\-\_\-generate\-Pseudo\-Property\-Adder\-For\-Type\-:}}
+\index{F\-M\-S\-\_\-generate\-Pseudo\-Property\-Adder\-For\-Type\-:@{F\-M\-S\-\_\-generate\-Pseudo\-Property\-Adder\-For\-Type\-:}!NSObject(FMS_Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}}
+\subsubsection[{F\-M\-S\-\_\-generate\-Pseudo\-Property\-Adder\-For\-Type\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ ({\bf F\-M\-S\-Pseudo\-Property\-Adder}) F\-M\-S\-\_\-generate\-Pseudo\-Property\-Adder\-For\-Type\-: 
+\begin{DoxyParamCaption}
+\item[{({\bf F\-M\-S\-Pseudo\-Property\-Type})}]{type}
+\end{DoxyParamCaption}
+}}\label{category_n_s_object_07_f_m_s___swizzler_08_ab9e309f9b20d03131be614a852347eb8}
+
+
+Generates a {\ttfamily F\-M\-S\-Pseudo\-Property\-Adder} block for the specified class and property type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & A {\ttfamily F\-M\-S\-Pseudo\-Property\-Type} indicating the type of properties the returned adder should create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The {\ttfamily F\-M\-S\-Pseudo\-Property\-Adder} for the calling class that creates pseudo properties of the type specified in the {\ttfamily type} parameter.
+\end{DoxyReturn}
+This method generates a block that can be used to create pseudo properties. Simply call the block and pass in a single {\ttfamily N\-S\-String} argument. The adder will dynamically create getter and setter methods using the string as the property name. The adder will use {\ttfamily objc\-\_\-get\-Associated\-Object()} and {\ttfamily objc\-\_\-set\-Associated\-Object()} as the data storage for the property. \hypertarget{category_n_s_object_07_f_m_s___swizzler_08_af89360df900835e962975d2c7b32f06f}{\index{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}!F\-M\-S\-\_\-override\-Class\-Method\-:old\-Selector\-:implementation\-Block\-:@{F\-M\-S\-\_\-override\-Class\-Method\-:old\-Selector\-:implementation\-Block\-:}}
+\index{F\-M\-S\-\_\-override\-Class\-Method\-:old\-Selector\-:implementation\-Block\-:@{F\-M\-S\-\_\-override\-Class\-Method\-:old\-Selector\-:implementation\-Block\-:}!NSObject(FMS_Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}}
+\subsubsection[{F\-M\-S\-\_\-override\-Class\-Method\-:old\-Selector\-:implementation\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) F\-M\-S\-\_\-override\-Class\-Method\-: 
+\begin{DoxyParamCaption}
+\item[{(S\-E\-L)}]{selector}
+\item[{oldSelector:(S\-E\-L)}]{old\-Selector}
+\item[{implementationBlock:(id)}]{block}
+\end{DoxyParamCaption}
+}}\label{category_n_s_object_07_f_m_s___swizzler_08_af89360df900835e962975d2c7b32f06f}
+
+
+Allows you to replace the implementation of an existing class method, while still providing access to the original implementation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em selector} & This is the selector for the class method you wish to override. \\
+\hline
+{\em old\-Selector} & This is the selector that will be used for accessing the old implementation. This must have the same number of arguments as the original {\ttfamily selector}. \\
+\hline
+{\em block} & A block containing our new implementation. This block must start with an argument for the current object (the equivilant of the {\ttfamily self} argument--note that we do not need to include the {\ttfamily \-\_\-cmd} argument). Next, we need to match all the method's arguments exactly. If you do not, it could cause the applicaiton to crash at runtime. Finally, the block needs to return the same type of data as the original method.\\
+\hline
+\end{DoxyParams}
+This method starts by creating an alias of the specified class method using the {\ttfamily old\-Selector} argument. Then it replaces the method's current {\ttfamily I\-M\-P} with a new {\ttfamily I\-M\-P} created from the provided block. This leaves us with two, unique methods\-: {\ttfamily selector} points to our new implementation while {\ttfamily old\-Selector} points to the old.
+
+Our implementation block must return the same data type as the original implementation. It must also take a number of arguments equal to the original + 1 (for {\ttfamily \-\_\-self}).
+
+Example\-: Method with 3 arguments\-: {\ttfamily \mbox{[}\mbox{[}Person class\mbox{]} F\-M\-S\-\_\-override\-Class\-Method\-:@selector(person\-With\-First\-Name\-:last\-Name\-:age\-:) old\-Selector\-:@selector(old\-Person\-With\-First\-Name\-:last\-Name\-:age\-:) implementation\-Block\-:$^\wedge$(id \-\_\-self, N\-S\-String $\ast$first\-Name, N\-S\-String $\ast$last\-Name, N\-S\-U\-Integer age)\{return \mbox{[}\-\_\-self old\-Person\-With\-First\-Name\-:\mbox{[}first\-Name lowercase\-String\mbox{]} last\-Name\-:\mbox{[}last\-Name lowercase\-String\mbox{]} age\-:age;\}\mbox{]};}
+
+Note\-: replacing a method that the class relies on internally may cause unexpected results. Strongly consider using `\-F\-M\-S\-\_\-\-Override\-Insance\-Method\-:old\-Selector\-:implementation\-Block\-: and calling the original method either before or after your modified code.
+
+Note\-: There may be a few odd edge cases where the original method checks the \-\_\-cmd hidden before determining its behavior. In these cases, the old implementation will use {\ttfamily old\-Selector} for their \-\_\-cmd value. So, they may no longer function properly. This should be rare, however. \hypertarget{category_n_s_object_07_f_m_s___swizzler_08_a7acd4f5c709742f78301d791530fc698}{\index{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}!F\-M\-S\-\_\-override\-Instance\-Method\-:old\-Selector\-:implementation\-Block\-:@{F\-M\-S\-\_\-override\-Instance\-Method\-:old\-Selector\-:implementation\-Block\-:}}
+\index{F\-M\-S\-\_\-override\-Instance\-Method\-:old\-Selector\-:implementation\-Block\-:@{F\-M\-S\-\_\-override\-Instance\-Method\-:old\-Selector\-:implementation\-Block\-:}!NSObject(FMS_Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}}
+\subsubsection[{F\-M\-S\-\_\-override\-Instance\-Method\-:old\-Selector\-:implementation\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) F\-M\-S\-\_\-override\-Instance\-Method\-: 
+\begin{DoxyParamCaption}
+\item[{(S\-E\-L)}]{selector}
+\item[{oldSelector:(S\-E\-L)}]{old\-Selector}
+\item[{implementationBlock:(id)}]{block}
+\end{DoxyParamCaption}
+}}\label{category_n_s_object_07_f_m_s___swizzler_08_a7acd4f5c709742f78301d791530fc698}
+
+
+Allows you to replace the implementation of an existing method, while still providing access to the original implementation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em selector} & This is the selector for the method you wish to override. \\
+\hline
+{\em old\-Selector} & This is the selector that will be used for accessing the old implementation. This must have the same number of arguments as the original {\ttfamily selector}. \\
+\hline
+{\em block} & A block containing our new implementation. This block must start with an argument for the current object (the equivilant of the {\ttfamily self} argument--note that we do not need to include the {\ttfamily \-\_\-cmd} argument). Next, we need to match all the method's arguments exactly. If you do not, it could cause the applicaiton to crash at runtime. Finally, the block needs to return the same type of data as the original method.\\
+\hline
+\end{DoxyParams}
+This method starts by creating an alias of the specified method using the {\ttfamily old\-Selector} argument. Then it replaces the method's current {\ttfamily I\-M\-P} with a new {\ttfamily I\-M\-P} created from the provided block. This leaves us with two, unique methods\-: {\ttfamily selector} points to our new implementation while {\ttfamily old\-Selector} points to the old.
+
+Our implementation block must return the same data type as the original implementation. It must also take a number of arguments equal to the original + 1 (for {\ttfamily \-\_\-self}).
+
+Examples\-: Method with no arguments\-: {\ttfamily \mbox{[}\mbox{[}Person class\mbox{]} F\-M\-S\-\_\-override\-Instance\-Method\-:@selector(first\-Name) old\-Selector\-:@selector(old\-First\-Name) implementation\-Block\-:$^\wedge$(Person $\ast$\-\_\-self)\{return \mbox{[}\mbox{[}\-\_\-self old\-First\-Name\mbox{]} lowercase\-String\mbox{]};\}\mbox{]};}
+
+Method with one argument\-: {\ttfamily \mbox{[}\mbox{[}Person class\mbox{]} F\-M\-S\-\_\-override\-Instance\-Method\-:@selector(set\-First\-Name\-:) old\-Selector\-:@selector(old\-Set\-First\-Name\-:) implementation\-Block\-:$^\wedge$(Person $\ast$\-\_\-self, N\-S\-String $\ast$name)\{ \mbox{[}\-\_\-self old\-Set\-First\-Name\-:\mbox{[}name lowercase\-String\mbox{]}\mbox{]};\}\mbox{]};}
+
+Note\-: You must take care when replacing methods from class clusters. Classes like N\-S\-String, N\-S\-Array or N\-S\-Date declare a public, abstract class--but then provide private subclasses when instantiated. If you replace the abstract class (e.\-g. {\ttfamily \mbox{[}N\-S\-String F\-M\-S\-\_\-replace\-Instance\-Method\-:...}) your new method will probably be overridden by the concrete subclass, and will never be called. You must call {\ttfamily F\-M\-S\-\_\-replace\-Instance\-Method} on the subclass itself (e.\-g. `\mbox{[}\mbox{[}my\-String class\mbox{]} F\-M\-S\-\_\-alias\-Instance\-Method...). To make things even more difficult, different instances from the same class cluster may have different concrete subclasses. Bottom line, it's probably best to avoid replacing methods on class clusters. Alternatively, dynamically subclass the instance before creating the alias to limit the change to just that instance.
+
+Note\-: Replacing methods may also cause unexpected results with K\-V\-O. Remember, if you are observing a keypath that corresponds to the method you have replaced, your new method will still trigger K\-V\-O notifications--even if you end up not changing the underlying values.
+
+Note\-: There may be a few odd edge cases where the original method checks the \-\_\-cmd hidden before determining its behavior. In these cases, the old implementation will use {\ttfamily old\-Selector} for their \-\_\-cmd value. So, they may no longer function properly. This should be rare, however. \hypertarget{category_n_s_object_07_f_m_s___swizzler_08_ada43393ead6d6976de66fd0df1211e3d}{\index{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}!F\-M\-S\-\_\-replace\-Class\-Method\-:with\-Implementation\-Block\-:@{F\-M\-S\-\_\-replace\-Class\-Method\-:with\-Implementation\-Block\-:}}
+\index{F\-M\-S\-\_\-replace\-Class\-Method\-:with\-Implementation\-Block\-:@{F\-M\-S\-\_\-replace\-Class\-Method\-:with\-Implementation\-Block\-:}!NSObject(FMS_Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}}
+\subsubsection[{F\-M\-S\-\_\-replace\-Class\-Method\-:with\-Implementation\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) F\-M\-S\-\_\-replace\-Class\-Method\-: 
+\begin{DoxyParamCaption}
+\item[{(S\-E\-L)}]{method\-Selector}
+\item[{withImplementationBlock:(id)}]{block}
+\end{DoxyParamCaption}
+}}\label{category_n_s_object_07_f_m_s___swizzler_08_ada43393ead6d6976de66fd0df1211e3d}
+
+
+Replaces the specified class method with the given block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em method\-Selector} & The selector for the class method we wish to replace. \\
+\hline
+{\em block} & A block containing our new implementation. This block must start with an argument for the current class (the equivilant of the {\ttfamily self} argument in other class methods--note that we do not need to include the {\ttfamily \-\_\-cmd} argument). Next, we need to match all the class method's arguments exactly. If you do not, it could cause the applicaiton to crash at runtime. Finally, the block needs to return the same type of data as the original method.\\
+\hline
+\end{DoxyParams}
+This method replaces the specified class method's current {\ttfamily I\-M\-P} with a new {\ttfamily I\-M\-P} created from the provided block. Our block must return the same data type as the original implementation. It must also take a number of arguments equal to the original + 1 (for {\ttfamily \-\_\-self}).
+
+Examples\-: Method with 3 arguments\-: {\ttfamily \mbox{[}\mbox{[}Person class\mbox{]} F\-M\-S\-\_\-replace\-Class\-Method\-:@selector(person\-With\-First\-Name\-:last\-Name\-:age\-:) with\-Implementation\-Block\-:$^\wedge$(id \-\_\-self, N\-S\-String $\ast$first\-Name, N\-S\-String $\ast$last\-Name, N\-S\-U\-Integer age)\{return nil;\}\mbox{]};} \hypertarget{category_n_s_object_07_f_m_s___swizzler_08_ac4c9e082d74e163f82d2cd429f735a89}{\index{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}!F\-M\-S\-\_\-replace\-Instance\-Method\-:with\-Implementation\-Block\-:@{F\-M\-S\-\_\-replace\-Instance\-Method\-:with\-Implementation\-Block\-:}}
+\index{F\-M\-S\-\_\-replace\-Instance\-Method\-:with\-Implementation\-Block\-:@{F\-M\-S\-\_\-replace\-Instance\-Method\-:with\-Implementation\-Block\-:}!NSObject(FMS_Swizzler)@{N\-S\-Object(\-F\-M\-S\-\_\-\-Swizzler)}}
+\subsubsection[{F\-M\-S\-\_\-replace\-Instance\-Method\-:with\-Implementation\-Block\-:}]{\setlength{\rightskip}{0pt plus 5cm}+ (void) F\-M\-S\-\_\-replace\-Instance\-Method\-: 
+\begin{DoxyParamCaption}
+\item[{(S\-E\-L)}]{method\-Selector}
+\item[{withImplementationBlock:(id)}]{block}
+\end{DoxyParamCaption}
+}}\label{category_n_s_object_07_f_m_s___swizzler_08_ac4c9e082d74e163f82d2cd429f735a89}
+
+
+Replaces the specified method with the given block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em method\-Selector} & The selector for the method we wish to replace. \\
+\hline
+{\em block} & A block containing our new implementation. This block must start with an argument for the current object (the equivilant of the {\ttfamily self} argument--note that we do not need to include the {\ttfamily \-\_\-cmd} argument). Next, we need to match all the method's arguments exactly. If you do not, it could cause the applicaiton to crash at runtime. Finally, the block needs to return the same type of data as the original method.\\
+\hline
+\end{DoxyParams}
+This method replaces the specified method's current {\ttfamily I\-M\-P} with a new {\ttfamily I\-M\-P} created from the provided block. Our block must return the same data type as the original implementation. It must also take a number of arguments equal to the original + 1 (for {\ttfamily \-\_\-self}).
+
+Examples\-: Method with no arguments\-: {\ttfamily \mbox{[}\mbox{[}Person class\mbox{]} F\-M\-S\-\_\-replace\-Instance\-Method\-:@selector(first\-Name) with\-Implementation\-Block\-:$^\wedge$(Person $\ast$\-\_\-self)\{return @\char`\"{}\-Bob\char`\"{};\}\mbox{]};}
+
+Method with one argument\-: {\ttfamily \mbox{[}\mbox{[}Person class\mbox{]} F\-M\-S\-\_\-replace\-Instance\-Method\-:@selector(set\-First\-Name\-:) with\-Implementation\-Block\-:$^\wedge$(Person $\ast$\-\_\-self, N\-S\-String $\ast$name)\{ // do something with the name here -\/-\/ no need to return anything.\}\mbox{]};}
+
+Note\-: replacing a method that the class relies on internally may cause unexpected results. Strongly consider using `\-F\-M\-S\-\_\-\-Override\-Insance\-Method\-:old\-Selector\-:implementation\-Block\-: and calling the original method either before or after your modified code.
+
+Note\-: You must take care when replacing methods from class clusters. Classes like N\-S\-String, N\-S\-Array or N\-S\-Date declare a public, abstract class--but then provide private subclasses when instantiated. If you replace the abstract class (e.\-g. {\ttfamily \mbox{[}N\-S\-String F\-M\-S\-\_\-replace\-Instance\-Method\-:...}) your new method will probably be overridden by the concrete subclass, and will never be called. You must call {\ttfamily F\-M\-S\-\_\-replace\-Instance\-Method} on the subclass itself (e.\-g. `\mbox{[}\mbox{[}my\-String class\mbox{]} F\-M\-S\-\_\-alias\-Instance\-Method...). To make things even more difficult, different instances from the same class cluster may have different concrete subclasses. Bottom line, it's probably best to avoid replacing methods on class clusters. Alternatively, dynamically subclass the instance before creating the alias to limit the change to just that instance.
+
+Note\-: Replacing methods may also cause unexpected results with K\-V\-O. Remember, if you are observing a keypath that corresponds to the method you have replaced, your new method will still trigger K\-V\-O notifications--even if you end up not changing the underlying values. 
+
+The documentation for this category was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+F\-M\-S\-Swizzler/\hyperlink{_n_s_object_09_f_m_s_swizzler_8h}{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}\item 
+F\-M\-S\-Swizzler/N\-S\-Object+\-F\-M\-S\-Swizzler.\-m\end{DoxyCompactItemize}

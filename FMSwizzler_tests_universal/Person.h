@@ -42,5 +42,6 @@
 - (NSString *)fullName;
 - (NSString *)fullNameWithTitle:(NSString *)title;
 - (BOOL)canLegallyDrink;
+- (NSString *)getCMD;
 
 @end

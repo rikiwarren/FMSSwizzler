@@ -345,8 +345,6 @@
     }
 }
 
-// TODO: what happens if the method is defined in the super class?
-// TODO: do I need to copy it over first?
 + (void)FMS_replaceInstanceMethod:(SEL)methodSelector withImplementationBlock:(id)block {
     
     // Make sure we have an implementation in the current class (not super class)
@@ -371,12 +369,6 @@
 
 
 #pragma mark - Class Method Swizzlers
-
-// TODO: can we use these on class clusters?
-// TODO: can we use these on core foundation classes?
-
-// TODO: what happens if the method is defined in the super class?
-// TODO: do I need to copy it over first?
 
 + (void)FMS_aliasClassMethod:(SEL)originalSelector newSelector:(SEL)newSelector {
     
@@ -417,8 +409,6 @@
     }
 }
 
-// TODO: what happens if the method is defined in the super class?
-// TODO: do I need to copy it over first?
 
 + (void)FMS_replaceClassMethod:(SEL)methodSelector withImplementationBlock:(id)block {
     
@@ -435,8 +425,6 @@
     class_replaceMethod(object_getClass(self), methodSelector, newImp, typeEncoding);
 }
 
-// TODO: what happens if the method is defined in the super class?
-// TODO: do I need to copy it over first?
 
 + (void)FMS_overrideClassMethod:(SEL)selector oldSelector:(SEL)oldSelector implementationBlock:(id)block {
     
@@ -521,23 +509,15 @@
 
 #pragma mark - Dynamic Subclassing
 
-// TODO: make the methods that modify the class methods.
-// TODO: dynamic subclassing should return a config block to let us call class methods. Why?
-// TODO: make sure we can use this for class clusters--but not core foundation classes.
-// TODO: We get errors when we get a tagged pointer for the date--test with NSNumber (can we force them to be tagged?).
-
 - (void)FMS_dynamiclySubclass {
     
     Class startingClass = [self class];
     
-    if ([[startingClass description] hasPrefix:@"__"]) {
+    if (((int)self & 1) == 1) {
         
-        [NSException
-         raise:NSInvalidArgumentException
-         format:@"An error occurred while trying to dynamicallys subclass %@. "
-         @"Cannot safely dynamically subclass Apple's private classes--they may be "
-         @"toll-free bridged or tagged pointers.",
-         startingClass];
+        [NSException raise:NSInternalInconsistencyException
+                    format:@"Cannot dynamic subclass a tagged pointer object."];
+        
     }
     
     static NSUInteger count = 0;

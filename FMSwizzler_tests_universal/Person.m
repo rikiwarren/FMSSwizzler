@@ -57,4 +57,8 @@
     return self.age >= 21;
 }
 
+- (NSString *)getCMD {
+    return NSStringFromSelector(_cmd);
+}
+
 @end

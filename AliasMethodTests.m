@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Rich Warren. All rights reserved.
 //
 
-#import "AliasInstanceMethodTests.h"
+#import "AliasMethodTests.h"
 #import "Person.h"
 #import "NSObject+FMSSwizzler.h"
 
@@ -31,10 +31,12 @@
 
 + (id)aliasOfPersonWithFirstName:(NSString *)firstName lastName:(NSString *)lastName age:(NSUInteger)age;
 
+- (NSString *)aliasedGetCMD;
+
 @end
 
 
-@interface AliasInstanceMethodTests()
+@interface AliasMethodTests()
 
 @property (strong, nonatomic) Person *p1;
 @property (strong, nonatomic) Person *p2;
@@ -43,7 +45,7 @@
 
 @end
 
-@implementation AliasInstanceMethodTests
+@implementation AliasMethodTests
 
 - (void)setUp
 {
@@ -59,13 +61,10 @@
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
-    [super tearDown];
-    
     self.p1 = nil;
     self.p2 = nil;
-
+    
+    [super tearDown];
 }
 
 
@@ -296,6 +295,9 @@
     STAssertEquals(self.b1, YES, @"We should trigger the change in p1's name");
     STAssertEquals(self.b2, YES, @"We should trigger the change in p2's name");
     
+    [self.p1 removeObserver:self forKeyPath:@"firstName"];
+    [self.p2 removeObserver:self forKeyPath:@"firstName"];
+    
     
 //    STFail(@"Finish writing test cases");
 }
@@ -308,6 +310,21 @@
     
     
 //    STFail(@"Finish writing test cases");
+}
+
+- (void)testCMD {
+    
+    STAssertEqualObjects([self.p1 getCMD], @"getCMD", @"The method returns the string representation of _cmd");
+    
+    STAssertNoThrow([Person FMS_aliasInstanceMethod:@selector(getCMD)
+                                        newSelector:@selector(aliasedGetCMD)],
+                    @"There should be no errors here.");
+        
+    STAssertEqualObjects([self.p1 getCMD], @"getCMD", @"This should still work");
+    STAssertEqualObjects([self.p1 aliasedGetCMD], @"aliasedGetCMD", @"This should return the new method name");
+
+//    STFail(@"Finish writing test cases");
+    
 }
 
 - (void)testAliasClassMethods {

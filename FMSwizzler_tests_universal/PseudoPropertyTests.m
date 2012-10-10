@@ -76,12 +76,10 @@
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
-    [super tearDown];
-    
     self.p1 = nil;
     self.p2 = nil;
+    
+    [super tearDown];
 }
 
 
