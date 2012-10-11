@@ -103,6 +103,8 @@
 		349A224C16221BD9001D254C /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = FMSwizzler_tests_universal/Person.m; sourceTree = SOURCE_ROOT; };
 		349A2250162236BC001D254C /* MonitorableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MonitorableObject.h; path = FMSwizzler_tests_universal/MonitorableObject.h; sourceTree = SOURCE_ROOT; };
 		349A2251162236BC001D254C /* MonitorableObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MonitorableObject.m; path = FMSwizzler_tests_universal/MonitorableObject.m; sourceTree = SOURCE_ROOT; };
+		34FA0173162674DF00DDC51A /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = SOURCE_ROOT; };
+		34FA0174162674DF00DDC51A /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,8 @@
 		349A223C1622168D001D254C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				34FA0173162674DF00DDC51A /* LICENSE.txt */,
+				34FA0174162674DF00DDC51A /* README.txt */,
 				34716288162626B000BE8B70 /* doxygen.config */,
 				347162861626269600BE8B70 /* DoxygenDocs.docset */,
 				3472869E16229635009EFA98 /* FMSSwizzler_iosTests-Info.plist */,
