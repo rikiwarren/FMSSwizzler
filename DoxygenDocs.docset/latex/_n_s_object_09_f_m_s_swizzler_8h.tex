@@ -34,7 +34,17 @@ enum \hyperlink{_n_s_object_09_f_m_s_swizzler_8h_a205a3232c27986305d69b9fff23ccf
 \subsection{Detailed Description}
 The public interface for F\-M\-S\-Swizzler.
 
-Note\-: I've tried to test and identify most of the obvious gotchas. However, by it's nature class and method swizzling is inherently unsafe. There may be additional edge cases that will cause errors. Please use these methods with care, and test your code thoroughly. 
+Note\-: I've tried to test and identify most of the obvious gotchas. However, by it's nature class and method swizzling is inherently unsafe. There may be additional edge cases that will cause errors. Please use these methods with care, and test your code thoroughly.
+
+Note\-: to add the library to a project, first add the library to the target project, then set the project's Other Linker Flags build setting to {\ttfamily -\/\-Obj\-C}. This will force the compiler to include the {\ttfamily N\-S\-Object+\-F\-M\-S\-Swizzler} code.
+
+You can either copy {\ttfamily N\-S\-Object+\-F\-M\-S\-Swizzler.h} and the appropriate lib\-F\-M\-S\-Swizzler\-\_\-$\ast$.a file into the target project, or you can place both projects in a workspace. If the destination project and library share a workspace, make sure to add the following paths to the destination project's build settings.
+
+For i\-O\-S\-: User Header Search Paths\-: {\ttfamily \char`\"{}\$\-O\-B\-J\-R\-O\-O\-T/\-Uninstalled\-Products/include/\char`\"{}}
+
+For O\-S\-X\-: Header Search Paths\-: {\ttfamily \char`\"{}\$\-T\-A\-R\-G\-E\-T\-\_\-\-B\-U\-I\-L\-D\-\_\-\-D\-I\-R/usr/local/include\char`\"{}}
+
+Then import the header as {\ttfamily \char`\"{}\-F\-M\-S\-Swizzler/\-N\-S\-Object+\-F\-M\-S\-Swizzler.\-h\char`\"{}} 
 
 \subsection{Typedef Documentation}
 \hypertarget{_n_s_object_09_f_m_s_swizzler_8h_ae568c6e4323fed2a329c8e59a7f15a95}{\index{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h@{N\-S\-Object+\-F\-M\-S\-Swizzler.\-h}!F\-M\-S\-Pseudo\-Property\-Adder@{F\-M\-S\-Pseudo\-Property\-Adder}}

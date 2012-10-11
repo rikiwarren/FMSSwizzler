@@ -121,7 +121,12 @@ Enumerations</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>The public interface for FMSSwizzler.</p>
-<p>Note: I've tried to test and identify most of the obvious gotchas. However, by it's nature class and method swizzling is inherently unsafe. There may be additional edge cases that will cause errors. Please use these methods with care, and test your code thoroughly. </p>
+<p>Note: I've tried to test and identify most of the obvious gotchas. However, by it's nature class and method swizzling is inherently unsafe. There may be additional edge cases that will cause errors. Please use these methods with care, and test your code thoroughly.</p>
+<p>Note: to add the library to a project, first add the library to the target project, then set the project's Other Linker Flags build setting to <code>-ObjC</code>. This will force the compiler to include the <code>NSObject+FMSSwizzler</code> code.</p>
+<p>You can either copy <code>NSObject+FMSSwizzler.h</code> and the appropriate libFMSSwizzler_*.a file into the target project, or you can place both projects in a workspace. If the destination project and library share a workspace, make sure to add the following paths to the destination project's build settings.</p>
+<p>For iOS: User Header Search Paths: <code>"$OBJROOT/UninstalledProducts/include/"</code></p>
+<p>For OSX: Header Search Paths: <code>"$TARGET_BUILD_DIR/usr/local/include"</code></p>
+<p>Then import the header as <code>"FMSSwizzler/NSObject+FMSSwizzler.h"</code> </p>
 </div><h2>Typedef Documentation</h2>
 <a class="anchor" id="ae568c6e4323fed2a329c8e59a7f15a95"></a>
 <div class="memitem">
@@ -194,7 +199,7 @@ Enumerations</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 10 2012 18:02:35 for FMSSwizzler by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 10 2012 22:19:55 for FMSSwizzler by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

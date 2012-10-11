@@ -117,49 +117,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//    STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//    OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72">   47</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72">pseudoPropertyType</a> {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72ac44d6f7cb6cde99e0ee049239da9f6d0">   49</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72ac44d6f7cb6cde99e0ee049239da9f6d0">FMSObjectRetain</a>,        </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72abc101b45febe76788e857b10b8bfd916">   50</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72abc101b45febe76788e857b10b8bfd916">FMSObjectCopy</a>,          </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72aee547e27acbccf66d1fb1698bf1a3ab1">   51</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72aee547e27acbccf66d1fb1698bf1a3ab1">FMSObjectAssignUnsafe</a>,  </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72aa1d669fdd9747c84697d34a7443ee9b1">   52</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72aa1d669fdd9747c84697d34a7443ee9b1">FMSBool</a>,                </div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72a7f957ab84f94a28cb764e69e746109be">   53</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72a7f957ab84f94a28cb764e69e746109be">FMSInteger</a>,             </div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72a6adbec559231f0ea14b4cefb38de203b">   54</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72a6adbec559231f0ea14b4cefb38de203b">FMSUnsignedInteger</a>,     </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72ae2b11cb6c36310b70b7a59a49ee06faa">   55</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72ae2b11cb6c36310b70b7a59a49ee06faa">FMSFloat</a>,               </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72ad101a152c15c1240003778bc221b44b9">   56</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72ad101a152c15c1240003778bc221b44b9">FMSDouble</a>               </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a105a30990436a0245ace5499526862cf">   62</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72">pseudoPropertyType</a> <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a105a30990436a0245ace5499526862cf">FMSPseudoPropertyType</a>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#ae568c6e4323fed2a329c8e59a7f15a95">   69</a></span>&#160;<span class="keyword">typedef</span> void (^<a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#ae568c6e4323fed2a329c8e59a7f15a95">FMSPseudoPropertyAdder</a>) (NSString *propertyName);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="category_n_s_object_07_f_m_s___swizzler_08.html">   78</a></span>&#160;<span class="keyword">@interface </span>NSObject (FMS_Swizzler)</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;+ (void)FMS_aliasInstanceMethod:(<span class="keywordtype">SEL</span>)originalSelector newSelector:(<span class="keywordtype">SEL</span>)newSelector;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;+ (void)FMS_replaceInstanceMethod:(<span class="keywordtype">SEL</span>)methodSelector withImplementationBlock:(<span class="keywordtype">id</span>)block;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;+ (void)FMS_overrideInstanceMethod:(<span class="keywordtype">SEL</span>)selector oldSelector:(<span class="keywordtype">SEL</span>)oldSelector implementationBlock:(<span class="keywordtype">id</span>)block;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;+ (void)FMS_aliasClassMethod:(<span class="keywordtype">SEL</span>)originalSelector newSelector:(<span class="keywordtype">SEL</span>)newSelector;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;+ (void)FMS_replaceClassMethod:(<span class="keywordtype">SEL</span>)methodSelector withImplementationBlock:(<span class="keywordtype">id</span>)block;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;+ (void)FMS_overrideClassMethod:(<span class="keywordtype">SEL</span>)selector oldSelector:(<span class="keywordtype">SEL</span>)oldSelector implementationBlock:(<span class="keywordtype">id</span>)block;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;+ (<a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#ae568c6e4323fed2a329c8e59a7f15a95">FMSPseudoPropertyAdder</a>)FMS_generatePseudoPropertyAdderForType:(<a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a105a30990436a0245ace5499526862cf">FMSPseudoPropertyType</a>)type;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;- (void)FMS_dynamiclySubclass;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#import &lt;Foundation/Foundation.h&gt;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72">   64</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72">pseudoPropertyType</a> {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72ac44d6f7cb6cde99e0ee049239da9f6d0">   66</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72ac44d6f7cb6cde99e0ee049239da9f6d0">FMSObjectRetain</a>,        </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72abc101b45febe76788e857b10b8bfd916">   67</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72abc101b45febe76788e857b10b8bfd916">FMSObjectCopy</a>,          </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72aee547e27acbccf66d1fb1698bf1a3ab1">   68</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72aee547e27acbccf66d1fb1698bf1a3ab1">FMSObjectAssignUnsafe</a>,  </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72aa1d669fdd9747c84697d34a7443ee9b1">   69</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72aa1d669fdd9747c84697d34a7443ee9b1">FMSBool</a>,                </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72a7f957ab84f94a28cb764e69e746109be">   70</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72a7f957ab84f94a28cb764e69e746109be">FMSInteger</a>,             </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72a6adbec559231f0ea14b4cefb38de203b">   71</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72a6adbec559231f0ea14b4cefb38de203b">FMSUnsignedInteger</a>,     </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72ae2b11cb6c36310b70b7a59a49ee06faa">   72</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72ae2b11cb6c36310b70b7a59a49ee06faa">FMSFloat</a>,               </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72ad101a152c15c1240003778bc221b44b9">   73</a></span>&#160;    <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72ad101a152c15c1240003778bc221b44b9">FMSDouble</a>               </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a105a30990436a0245ace5499526862cf">   79</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a205a3232c27986305d69b9fff23ccf72">pseudoPropertyType</a> <a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a105a30990436a0245ace5499526862cf">FMSPseudoPropertyType</a>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#ae568c6e4323fed2a329c8e59a7f15a95">   86</a></span>&#160;<span class="keyword">typedef</span> void (^<a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#ae568c6e4323fed2a329c8e59a7f15a95">FMSPseudoPropertyAdder</a>) (NSString *propertyName);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="code" href="category_n_s_object_07_f_m_s___swizzler_08.html">   95</a></span>&#160;<span class="keyword">@interface </span>NSObject (FMS_Swizzler)</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;+ (void)FMS_aliasInstanceMethod:(<span class="keywordtype">SEL</span>)originalSelector newSelector:(<span class="keywordtype">SEL</span>)newSelector;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;+ (void)FMS_replaceInstanceMethod:(<span class="keywordtype">SEL</span>)methodSelector withImplementationBlock:(<span class="keywordtype">id</span>)block;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;+ (void)FMS_overrideInstanceMethod:(<span class="keywordtype">SEL</span>)selector oldSelector:(<span class="keywordtype">SEL</span>)oldSelector implementationBlock:(<span class="keywordtype">id</span>)block;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;+ (void)FMS_aliasClassMethod:(<span class="keywordtype">SEL</span>)originalSelector newSelector:(<span class="keywordtype">SEL</span>)newSelector;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;+ (void)FMS_replaceClassMethod:(<span class="keywordtype">SEL</span>)methodSelector withImplementationBlock:(<span class="keywordtype">id</span>)block;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;+ (void)FMS_overrideClassMethod:(<span class="keywordtype">SEL</span>)selector oldSelector:(<span class="keywordtype">SEL</span>)oldSelector implementationBlock:(<span class="keywordtype">id</span>)block;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;+ (<a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#ae568c6e4323fed2a329c8e59a7f15a95">FMSPseudoPropertyAdder</a>)FMS_generatePseudoPropertyAdderForType:(<a class="code" href="_n_s_object_09_f_m_s_swizzler_8h.html#a105a30990436a0245ace5499526862cf">FMSPseudoPropertyType</a>)type;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;- (void)FMS_dynamiclySubclass;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="keyword">@end</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 10 2012 18:02:35 for FMSSwizzler by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Oct 10 2012 22:19:55 for FMSSwizzler by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

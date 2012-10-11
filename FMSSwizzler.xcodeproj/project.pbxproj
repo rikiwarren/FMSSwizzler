@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3404B8A8162668DE00BE641D /* NSObject+FMSSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = 349A220E16221546001D254C /* NSObject+FMSSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3404B8AA1626691100BE641D /* NSObject+FMSSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = 349A220E16221546001D254C /* NSObject+FMSSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34387FAE1623B522002941B8 /* ReplaceMethodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34387FAD1623B522002941B8 /* ReplaceMethodTests.m */; };
 		34387FAF1623B522002941B8 /* ReplaceMethodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34387FAD1623B522002941B8 /* ReplaceMethodTests.m */; };
 		34387FB31624B174002941B8 /* OverrideMethodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34387FB21624B174002941B8 /* OverrideMethodTests.m */; };
@@ -251,10 +253,19 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		3404B8A91626690700BE641D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3404B8AA1626691100BE641D /* NSObject+FMSSwizzler.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		349A22211622168D001D254C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3404B8A8162668DE00BE641D /* NSObject+FMSSwizzler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +279,7 @@
 				349A21DF1622152D001D254C /* Sources */,
 				349A21E01622152D001D254C /* Frameworks */,
 				349A21E11622152D001D254C /* CopyFiles */,
+				3404B8A91626690700BE641D /* Headers */,
 				347162601626144D00BE8B70 /* ShellScript */,
 			);
 			buildRules = (
@@ -568,6 +580,7 @@
 				GCC_PREFIX_HEADER = "FMSSwizzler/FMSSwizzler-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = /include/FMSSwizzler;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -581,6 +594,7 @@
 				GCC_PREFIX_HEADER = "FMSSwizzler/FMSSwizzler-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = /include/FMSSwizzler;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -630,7 +644,9 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/FMSSwizzler;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -650,7 +666,9 @@
 				GCC_PREFIX_HEADER = "FMSSwizzler/FMSSwizzler-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include/FMSSwizzler;
 				SDKROOT = macosx;
 			};
 			name = Release;
