@@ -517,8 +517,9 @@
 - (void)FMS_dynamiclySubclass {
     
     Class startingClass = [self class];
+    NSInteger pointer = (NSInteger)self;
     
-    if (((int)self & 1) == 1) {
+    if ((pointer & 1) == 1) {
         
         [NSException raise:NSInternalInconsistencyException
                     format:@"Cannot dynamic subclass a tagged pointer object."];

@@ -154,8 +154,9 @@
     // Does not work with tagged pointers
     // This will produce a tagged pointer on OSX, but not on iOS
     NSDate *taggedDate = [NSDate dateWithTimeIntervalSince1970:0.0];
+    NSUInteger pointer = taggedDate;
     
-    if (((int)taggedDate & 1) == 1) {
+    if ((pointer & 1) == 1) {
         NSLog(@"*** Testing a tagged date ***");
         STAssertThrows([taggedDate FMS_dynamiclySubclass], @"This should throw an exception");
     }

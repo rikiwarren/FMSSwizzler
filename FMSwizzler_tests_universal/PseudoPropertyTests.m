@@ -278,8 +278,8 @@
     [self setObject:@"Static String" value:@1];
     [self setObject:[NSString stringWithFormat:@"Non Static String"] value:@2];
     [self setObject:[@"Mutable String" mutableCopy] value:@3];
-    [self setObject:[NSDate dateWithTimeIntervalSince1970:0.0f] value:@4];
-    [self setObject:[NSDate dateWithTimeIntervalSince1970:0.1f] value:@5];
+    [self setObject:[NSDate dateWithTimeIntervalSince1970:0.1f] value:@4];
+    [self setObject:[NSDate dateWithTimeIntervalSince1970:0.2f] value:@5];
     [self setObject:@[@"First", @"Second", @"Third"] value:@6];
     
 //    STFail(@"Boo");
