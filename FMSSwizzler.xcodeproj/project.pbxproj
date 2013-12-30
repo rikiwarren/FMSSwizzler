@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3404B8A8162668DE00BE641D /* NSObject+FMSSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = 349A220E16221546001D254C /* NSObject+FMSSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3404B8AA1626691100BE641D /* NSObject+FMSSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = 349A220E16221546001D254C /* NSObject+FMSSwizzler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34387FAE1623B522002941B8 /* ReplaceMethodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34387FAD1623B522002941B8 /* ReplaceMethodTests.m */; };
 		34387FAF1623B522002941B8 /* ReplaceMethodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34387FAD1623B522002941B8 /* ReplaceMethodTests.m */; };
 		34387FB31624B174002941B8 /* OverrideMethodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34387FB21624B174002941B8 /* OverrideMethodTests.m */; };
@@ -18,6 +16,7 @@
 		3472869F16229669009EFA98 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 349A223E1622168D001D254C /* InfoPlist.strings */; };
 		347286A21623594B009EFA98 /* AliasMethodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 347286A11623594B009EFA98 /* AliasMethodTests.m */; };
 		347286A31623594B009EFA98 /* AliasMethodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 347286A11623594B009EFA98 /* AliasMethodTests.m */; };
+		3495FE7618712C88004159A4 /* NSObject+FMSSwizzler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 349A220E16221546001D254C /* NSObject+FMSSwizzler.h */; };
 		349A21E71622152D001D254C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A21E61622152D001D254C /* Foundation.framework */; };
 		349A21F61622152D001D254C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A21F51622152D001D254C /* SenTestingKit.framework */; };
 		349A21F81622152D001D254C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 349A21F71622152D001D254C /* UIKit.framework */; };
@@ -38,6 +37,7 @@
 		349A2262162293D5001D254C /* MonitorableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A2251162236BC001D254C /* MonitorableObject.m */; };
 		349A2263162293D6001D254C /* MonitorableObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 349A2251162236BC001D254C /* MonitorableObject.m */; };
 		349A226816229547001D254C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 349A223E1622168D001D254C /* InfoPlist.strings */; };
+		349DCF8B18712BC1005DC3CD /* NSObject+FMSSwizzler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 349A220E16221546001D254C /* NSObject+FMSSwizzler.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,12 +58,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		3495FE7518712C79004159A4 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				3495FE7618712C88004159A4 /* NSObject+FMSSwizzler.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		349A21E11622152D001D254C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				349DCF8B18712BC1005DC3CD /* NSObject+FMSSwizzler.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,25 +267,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		3404B8A91626690700BE641D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3404B8AA1626691100BE641D /* NSObject+FMSSwizzler.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		349A22211622168D001D254C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3404B8A8162668DE00BE641D /* NSObject+FMSSwizzler.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		349A21E21622152D001D254C /* FMSSwizzler_ios */ = {
 			isa = PBXNativeTarget;
@@ -283,7 +275,6 @@
 				349A21DF1622152D001D254C /* Sources */,
 				349A21E01622152D001D254C /* Frameworks */,
 				349A21E11622152D001D254C /* CopyFiles */,
-				3404B8A91626690700BE641D /* Headers */,
 				347162601626144D00BE8B70 /* ShellScript */,
 			);
 			buildRules = (
@@ -320,8 +311,8 @@
 			buildPhases = (
 				349A221F1622168D001D254C /* Sources */,
 				349A22201622168D001D254C /* Frameworks */,
-				349A22211622168D001D254C /* Headers */,
 				34716269162614E800BE8B70 /* ShellScript */,
+				3495FE7518712C79004159A4 /* CopyFiles */,
 			);
 			buildRules = (
 			);

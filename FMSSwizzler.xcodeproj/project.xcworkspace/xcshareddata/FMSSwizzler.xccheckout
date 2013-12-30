@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C2F8C1C4-F755-4AE7-9474-CDF8C826962E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FMSSwizzler</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F8CE8937-AC62-4539-8269-161563F7F1F8</key>
+		<string>https://github.com/rikiwarren/FMSSwizzler.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FMSSwizzler.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F8CE8937-AC62-4539-8269-161563F7F1F8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rikiwarren/FMSSwizzler.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F8CE8937-AC62-4539-8269-161563F7F1F8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F8CE8937-AC62-4539-8269-161563F7F1F8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FMSSwizzler</string>
+		</dict>
+	</array>
+</dict>
+</plist>
