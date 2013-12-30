@@ -539,7 +539,7 @@
     objc_registerClassPair(cls);
     object_setClass(self, cls);
     
-    [cls FMS_replaceInstanceMethod:@selector(classForCoder) withImplementationBlock:^(id self) {
+    [cls FMS_replaceInstanceMethod:@selector(classForCoder) withImplementationBlock:^(__unused id _self) {
         return startingClass;
     }];
 }
